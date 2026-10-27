@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+:root { --ink:#1c2540; --muted:#69738a; --primary:#6558e8; --bg:#f5f6fc; --line:#e8eaf3; --white:#fff; --green:#16866a; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font-family:'DM Sans',sans-serif; }
+.topbar { max-width:1080px; margin:auto; padding:30px 24px 24px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+h1,h2,p { margin-top:0; }
+h1,h2 { font-family:'Manrope',sans-serif; letter-spacing:-.04em; }
+h1 { font-size:clamp(1.5rem,3vw,2rem); margin-bottom:0; }
+h2 { font-size:1.35rem; margin-bottom:8px; }
+.eyebrow { color:var(--primary); font-size:.72rem; font-weight:700; letter-spacing:.13em; margin-bottom:8px; }
+.pill { background:#ebe9ff; color:#5144c9; padding:9px 14px; border-radius:99px; font-weight:700; font-size:.82rem; white-space:nowrap; }
+.layout { max-width:1080px; padding:0 24px 28px; margin:auto; display:grid; gap:20px; }
+.card { background:var(--white); border:1px solid var(--line); border-radius:20px; box-shadow:0 8px 28px rgba(39,47,91,.035); }
+.welcome { padding:28px 30px; background:linear-gradient(115deg,#eeedff,#f9f8ff 70%,#e4f8f2); display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.welcome p:not(.eyebrow) { color:var(--muted); margin-bottom:0; line-height:1.6; max-width:600px; }
+.welcome-icon { font-size:3.3rem; background:#ffffffaa; border-radius:22px; padding:18px; }
+.stats { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.stat { padding:20px 22px; display:flex; flex-direction:column; gap:10px; }
+.stat span { color:var(--muted); font-size:.9rem; }
+.stat strong { font:800 2rem 'Manrope',sans-serif; }
+.task-panel { padding:26px; }
+.section-heading { display:flex; justify-content:space-between; align-items:center; }
+.task-form { display:grid; grid-template-columns:2fr 1.3fr 1.2fr auto; align-items:end; gap:12px; margin:20px 0 22px; }
+label { display:grid; gap:8px; color:#49536d; font-size:.82rem; font-weight:700; }
+input { width:100%; min-width:0; padding:12px 13px; border:1px solid #dfe2ee; border-radius:10px; color:var(--ink); background:#fff; font:inherit; outline:none; }
+input:focus { border-color:var(--primary); box-shadow:0 0 0 3px #6558e81c; }
+button { cursor:pointer; font:700 .88rem 'DM Sans',sans-serif; border:0; border-radius:10px; padding:13px 16px; background:var(--primary); color:white; transition:transform .15s,opacity .15s; }
+button:hover { opacity:.9; }
+button:active { transform:scale(.98); }
+.filters { display:flex; gap:8px; padding-bottom:14px; border-bottom:1px solid var(--line); }
+.filter { background:transparent; color:var(--muted); padding:9px 13px; }
+.filter.active { background:#eeedff; color:#5144c9; }
+.task-list { display:grid; gap:10px; padding-top:14px; }
+.task-item { display:grid; grid-template-columns:auto 1fr auto; gap:13px; align-items:center; border:1px solid var(--line); padding:14px; border-radius:13px; }
+.task-item input[type=checkbox] { width:18px; height:18px; accent-color:var(--green); }
+.task-name { font-weight:700; margin-bottom:4px; overflow-wrap:anywhere; }
+.task-meta { color:var(--muted); font-size:.82rem; }
+.task-item.done .task-name { text-decoration:line-through; color:#8a91a4; }
+.task-actions { display:flex; align-items:center; gap:8px; }
+.delete-btn { background:#fff0f0; color:#b33b49; padding:9px 11px; }
+.empty { color:var(--muted); text-align:center; padding:22px 0 8px; }
+.empty.hidden { display:none; }
+.tips { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:24px 28px; }
+.tips p:not(.eyebrow) { color:var(--muted); line-height:1.6; margin-bottom:0; }
+.tips span { font-size:2.4rem; }
+footer { text-align:center; padding:8px 24px 30px; color:#8a91a4; font-size:.82rem; }
+@media (max-width:760px) { .task-form { grid-template-columns:1fr 1fr; } .task-form button { grid-column:1/-1; } }
+@media (max-width:520px) { .topbar { padding:24px 16px 18px; } .layout { padding:0 16px 22px; } .welcome { padding:22px; } .welcome-icon { font-size:2rem; padding:12px; } .stats { gap:9px; } .stat { padding:15px 12px; } .stat span { font-size:.75rem; } .stat strong { font-size:1.6rem; } .task-panel { padding:19px 15px; } .task-form { grid-template-columns:1fr; } .task-form button { grid-column:auto; } .task-item { grid-template-columns:auto 1fr; } .task-actions { grid-column:2; justify-content:flex-start; } .filters { flex-wrap:wrap; } }

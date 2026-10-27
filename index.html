@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Student Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">STUDY SMARTER</p>
+      <h1>Smart Student Planner</h1>
+    </div>
+    <span class="pill">Free Plan</span>
+  </header>
+
+  <main class="layout">
+    <section class="welcome card">
+      <div>
+        <p class="eyebrow">YOUR STUDY SPACE</p>
+        <h2>Make today count.</h2>
+        <p>Plan your tasks, stay on top of exams, and track your progress.</p>
+      </div>
+      <div class="welcome-icon" aria-hidden="true">📚</div>
+    </section>
+
+    <section class="stats">
+      <article class="card stat"><span>Total tasks</span><strong id="totalTasks">0</strong></article>
+      <article class="card stat"><span>Completed</span><strong id="completedTasks">0</strong></article>
+      <article class="card stat"><span>Pending</span><strong id="pendingTasks">0</strong></article>
+    </section>
+
+    <section class="card task-panel">
+      <div class="section-heading">
+        <div><p class="eyebrow">STAY ORGANIZED</p><h2>My study tasks</h2></div>
+      </div>
+      <form id="taskForm" class="task-form">
+        <label>Task name
+          <input id="taskTitle" type="text" placeholder="e.g. Revise mathematics" maxlength="100" required />
+        </label>
+        <label>Subject
+          <input id="taskSubject" type="text" placeholder="e.g. Mathematics" maxlength="60" required />
+        </label>
+        <label>Due date
+          <input id="taskDate" type="date" required />
+        </label>
+        <button type="submit">+ Add task</button>
+      </form>
+      <div class="filters" role="group" aria-label="Filter tasks">
+        <button class="filter active" data-filter="all" type="button">All tasks</button>
+        <button class="filter" data-filter="pending" type="button">Pending</button>
+        <button class="filter" data-filter="completed" type="button">Completed</button>
+      </div>
+      <div id="taskList" class="task-list" aria-live="polite"></div>
+      <p id="emptyState" class="empty">No tasks yet. Add your first study task above.</p>
+    </section>
+
+    <section class="card tips">
+      <div><p class="eyebrow">STUDENT TIP</p><h2>Small steps make progress.</h2><p>Choose one important task, work on it for 25 minutes, then take a short break.</p></div>
+      <span aria-hidden="true">🌱</span>
+    </section>
+  </main>
+
+  <footer>Smart Student Planner · Student project demo</footer>
+  <script src="script.js"></script>
+</body>
+</html>
